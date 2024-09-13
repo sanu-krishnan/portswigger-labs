@@ -7,7 +7,7 @@ import urllib3
 
 
 # Add proxies for debugging
-proxies = {'http': 'http://127.0.0.1:8000','https': 'http://127.0.0.1:8000'}
+# proxies = {'http': 'http://127.0.0.1:8080','https': 'http://127.0.0.1:8080'}
 
 def exploit_sqli(url,payload):
     # Disable SSL warnings
@@ -18,7 +18,7 @@ def exploit_sqli(url,payload):
     
     r = requests.get(url, verify=False)
     
-    # Check if the response has the hidden product "Cat Grin"
+    # Check if the response has the hidden product
     if "Tea Bags" in r.text:
         return True
     else:
